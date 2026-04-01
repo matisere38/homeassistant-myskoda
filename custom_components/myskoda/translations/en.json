@@ -3,7 +3,8 @@
         "abort": {
             "already_configured": "Device is already configured",
             "reauth_successful": "Reauthentication has succeeded.",
-            "no_entry": "Could not find MySkoda configuration. Please check your logs and open an issue on GitHub."
+            "no_entry": "Could not find MySkoda configuration. Please check your logs and open an issue on GitHub.",
+            "reconfigure_successful": "Reconfiguration was successful."
         },
         "error": {
             "cannot_connect": "Failed to connect. MySkoda may be down or unreachable.",
@@ -29,6 +30,14 @@
                     "password": "Password"
                 },
                 "description": "Enter the credentials from your MySkoda app."
+            },
+            "reconfigure": {
+                "data": {
+                    "email": "E-mail address",
+                    "password": "Password"
+                },
+                "description": "Update your MySkoda credentials.",
+                "title": "Reconfigure MySkoda"
             }
         }
     },
@@ -233,6 +242,33 @@
             },
             "outside_temperature": {
                 "name": "Outside Temperature"
+            },
+            "overall_mileage": {
+                "name": "Overall Mileage"
+            },
+            "overall_travel_time": {
+                "name": "Overall Travel Time"
+            },
+            "overall_average_speed": {
+                "name": "Overall Average Speed"
+            },
+            "overall_average_electric_consumption": {
+                "name": "Overall Average Electric Consumption"
+            },
+            "overall_average_fuel_consumption": {
+                "name": "Overall Average Fuel Consumption"
+            },
+            "last_trip_mileage": {
+                "name": "Last Trip Mileage"
+            },
+            "last_trip_travel_time": {
+                "name": "Last Trip Travel Time"
+            },
+            "last_trip_average_speed": {
+                "name": "Last Trip Average Speed"
+            },
+            "last_trip_average_fuel_consumption": {
+                "name": "Last Trip Average Fuel Consumption"
             }
         },
         "switch": {
