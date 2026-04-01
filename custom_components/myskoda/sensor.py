@@ -1,3 +1,7 @@
+import logging
+
+_LOGGER = logging.getLogger(__name__)
+
 """Sensors for the MySkoda integration."""
 
 from datetime import UTC, datetime
@@ -858,10 +862,18 @@ class WarningLightSensor(MySkodaSensor):
     @property
     def native_value(self) -> str | None:
         """Return defects for this warning category."""
-        if health := self.vehicle.health:
-            for warning in health.warning_lights:
+        try:
+            if not hasattr(self.vehicle, "health"):
+                return None
+            if not self.vehicle.health:
+                return None
+            for warning in self.vehicle.health.warning_lights:
                 if warning.category == self._category:
                     if warning.defects:
-                        return ", ".join(warning.defects)
+                        return ", ".join(defect.text for defect in warning.defects)
                     return "OK"
-        return None
+            return None
+        except Exception as e:
+            _LOGGER.exception("ERREUR dans WarningLightSensor: %s", e)
+            return None
+            
