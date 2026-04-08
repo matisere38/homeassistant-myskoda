@@ -849,6 +849,7 @@ CATEGORY_ICONS = {
     "OTHER": "mdi:alert-circle",
 }
 
+
 class WarningLightSensor(MySkodaSensor):
     """Sensor for a specific warning light category."""
 
